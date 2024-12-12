@@ -7,7 +7,7 @@ public class DataService : ISprint5Task3V10
 {
     public string SaveToFileTextData(int x)
     {
-        double calculation = -6.0;
+        int calculation = -6;
         byte[] byteArray = BitConverter.GetBytes(calculation);
         string tempFilePath = Path.GetTempFileName();
         File.WriteAllBytes(tempFilePath, byteArray);
