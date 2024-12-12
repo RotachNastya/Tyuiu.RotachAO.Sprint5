@@ -7,12 +7,10 @@ public class DataService : ISprint5Task3V10
 {
     public string SaveToFileTextData(int x)
     {
-        string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask3.bin");
-        int y = -6;
-        using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate), Encoding.UTF8))
-        {
-            writer.Write(BitConverter.GetBytes((int)y));
-        }
-        return path;
+        int calculation = -6;
+        byte[] byteArray = BitConverter.GetBytes(calculation);
+        string tempFilePath = Path.GetTempFileName();
+        File.WriteAllBytes(tempFilePath, byteArray);
+        return tempFilePath;
     }
 } 
