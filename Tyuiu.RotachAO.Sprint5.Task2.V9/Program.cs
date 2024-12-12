@@ -23,7 +23,7 @@ namespace Tyuiu.RotachAO.Sprint5.Task2.V9
             Console.WriteLine("************************************************************************");
 
             
-            Console.WriteLine("Файл: ");
+            Console.WriteLine("Файл:");
             Console.WriteLine("Создан!");
             Console.ReadKey();
         }
