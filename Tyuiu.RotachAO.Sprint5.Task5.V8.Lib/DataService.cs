@@ -6,7 +6,7 @@ public class DataService : ISprint5Task5V8
 {
         public double LoadFromDataFile(string path)
         {
-            double min = 100000;
+            double min = 100000; 
 
             using (StreamReader reader = new StreamReader(path))
             {
