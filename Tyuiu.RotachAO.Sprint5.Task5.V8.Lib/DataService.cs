@@ -6,20 +6,31 @@ public class DataService : ISprint5Task5V8
 {
         public double LoadFromDataFile(string path)
         {
-            double min = 100000; 
-
-            using (StreamReader reader = new StreamReader(path))
+            double min = 100000;
+        Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+        double max = 0;
+        using (StreamReader reader = new StreamReader(path))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                string[] strNums = line.Split();
+                foreach (string strNum in strNums)
                 {
-                    if (Convert.ToDouble(line) < min)
+                    double num = (Convert.ToDouble(strNum));
+                    if ((int)num == num && num > max)
                     {
-                        min = Convert.ToDouble(line);
+                        bool isPrime = true;
+                        for (int i = 2; i <= num / 2; i++)
+                            if (num % i == 0)
+                                isPrime = false;
+                        if (isPrime || num == 2)
+                            max = num;
                     }
-
                 }
             }
-            return Math.Round(min, 3);
+            return max;
         }
     }
+}
+    
