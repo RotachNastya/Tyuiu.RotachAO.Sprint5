@@ -18,18 +18,18 @@ public class DataService : ISprint5Task5V8
                 foreach (string strNum in strNums)
                 {
                     double num = (Convert.ToDouble(strNum));
-                    if ((int)num == num && num > max)
+                    if ((int)num == num && num < min)
                     {
                         bool isPrime = true;
                         for (int i = 2; i <= num / 2; i++)
                             if (num % i == 0)
                                 isPrime = false;
                         if (isPrime || num == 2)
-                            max = num;
+                            min = num;
                     }
                 }
             }
-            return max;
+            return mins;
         }
     }
 }
