@@ -6,21 +6,22 @@ public class DataService : ISprint5Task5V8
 {
         public double LoadFromDataFile(string path)
         {
-            double min = 100000;
-
-            using (StreamReader reader = new StreamReader(path))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+            string fileContent = File.ReadAllText(path);
+            var values = fileContent
+                .Split(new[] { ' ', '\n', '\r', ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(val =>
                 {
-                    if (Convert.ToDouble(line) < min)
+                    if (double.TryParse(val, out double doubleValue))
                     {
-                        min = Convert.ToDouble(line);
+                        return Math.Round(doubleValue, 3);
                     }
-
-                }
-            }
-            return Math.Round(min, 3);
+                    return (double?)null;
+                })
+                .Where(val => val.HasValue)
+                .Select(val => val.Value)
+                .ToArray();
+            var minInteger = values.Where(val => val == Math.Truncate(val)).Min();
+            return minInteger;
         }
-}
+    }
     
