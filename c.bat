@@ -8,8 +8,8 @@ set group=ИИПб-24-1
 set name=RotachAO
 
 set sprint=5
-set task=5
-set variant=8
+set task=6
+set variant=23
 
 set template=%prefix%.%name%.Sprint%sprint%
 set filename_template=%template%.Task%task%.V%variant%
