@@ -8,7 +8,7 @@ public class DataService : ISprint5Task7V27
     public string LoadDataAndSave(string path)
     {
         // Чтение содержимого файла
-        string fileContent = File.ReadAllText(path);
+        string fileContent = File.ReadAllText(path); 
          
         // Удаление лишних пробелов
         string updatedContent = Regex.Replace(fileContent, @"\s{2,}", " ");
