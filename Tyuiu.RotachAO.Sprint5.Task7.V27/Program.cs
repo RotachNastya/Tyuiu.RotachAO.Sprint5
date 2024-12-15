@@ -19,17 +19,11 @@ class Program
         Console.WriteLine("*                                                                      *"); 
         Console.WriteLine("************************************************************************"); 
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                     *"); 
-        Console.WriteLine("************************************************************************"); 
- 
-        Console.WriteLine("Введите переменную X:"); 
-        int x = int.Parse(Console.ReadLine()!); 
-        Console.WriteLine("Введите переменную Y:"); 
-        int y = int.Parse(Console.ReadLine()!); 
- 
-        Console.WriteLine("************************************************************************"); 
-        Console.WriteLine("* РЕЗУЛЬТАТ:                                                           *"); 
-        Console.WriteLine("************************************************************************"); 
- 
-        Console.WriteLine($"Ответ = "); 
+        Console.WriteLine("************************************************************************");
+
+        string path = @"C:\DataSprint5\InPutDataFileTask7V26.txt";
+        var result = ds.LoadDataAndSave(path);
+        Console.WriteLine(result);
+        Console.ReadKey();
     } 
 } 
