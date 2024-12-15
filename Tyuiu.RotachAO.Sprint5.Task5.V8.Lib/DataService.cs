@@ -21,8 +21,8 @@ public class DataService : ISprint5Task5V8
             .Where(val => val.HasValue)
             .Select(val => val.Value)
             .ToArray();
-        var minInteger = values.Where(val => val == Math.Truncate(val)).Min();
+        var minInteger = values.Where(val => val != Math.Truncate(val)).Min();
         return minInteger;
     }
-    }
+}
     
