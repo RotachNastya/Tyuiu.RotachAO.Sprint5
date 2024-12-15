@@ -6,15 +6,17 @@ public class DataService : ISprint5Task6V23
 {
     public int LoadFromDataFile(string path)
     {
-            string fileContent = File.ReadAllText(path);
-            int count = 0;
-            for (int i = 0; i < fileContent.Length - 1; i++)
+          string fileContent = File.ReadAllText(path);
+        int count = 0;
+
+        foreach (char c in fileContent)
+        {
+            if (c == '-')
             {
-                if (fileContent[i] == '-' && fileContent[i + 1] == '-')
-                {
-                    count++;
-                }
+                count++;
             }
-            return count;
         }
+
+        return count;
+    }
 } 
