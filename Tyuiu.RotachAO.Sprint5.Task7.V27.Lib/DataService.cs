@@ -13,11 +13,9 @@ public class DataService : ISprint5Task7V27
         // Удаление лишних пробелов
         string updatedContent = Regex.Replace(fileContent, @"\s{2,}", " ");
 
-        // Сохранение изменений обратно в файл
-        File.WriteAllText(path, updatedContent);
-
-        // Возвращение изменённого содержимого
-        return updatedContent;
+        string pathSaveFile = Path.Combine(Path.GetTempPath(), "OutPutDataFileTask7V27.txt");
+        File.WriteAllText(pathSaveFile, updatedContent);
+        return pathSaveFile;
     }
 }
 
