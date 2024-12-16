@@ -6,7 +6,7 @@ namespace Tyuiu.RotachAO.Sprint5.Task7.V27.Lib;
 public class DataService : ISprint5Task7V27
 {
     public string LoadDataAndSave(string path)
-    {
+    { 
         // Чтение содержимого файла
         string fileContent = File.ReadAllText(path); 
          
